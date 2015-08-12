@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false" scan="true" scanPeriod="30 seconds">
+
+
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%d{HH:mm:ss} %5level   %msg \(%file:%line\)%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="application" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%d{HH:mm:ss} %5level * %msg \(%file:%line\)%n</pattern>
+		</encoder>
+	</appender>
+
+
+
+	<logger name="kr.steelheart" level="debug" additivity="false">
+		<appender-ref ref="application" />
+	</logger>
+
+
+	<logger name="org.apache.tiles.request.locale" level="error" additivity="false" />
+
+	<root level="info">
+		<appender-ref ref="console" />
+	</root>
+
+
+</configuration>
+
+
